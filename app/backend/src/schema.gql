@@ -16,6 +16,16 @@ A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date
 """
 scalar DateTime
 
+type ResponseEdge {
+  from: String
+  to: String
+}
+
+input Edge {
+  from: String
+  to: String
+}
+
 type Query {
   findNodesOnLevel(level: String!): Node!
 }
@@ -24,6 +34,7 @@ type Mutation {
   createNode(node: UserNode!): Node!
   createEdge(edge: Edge!): [String!]!
   deleteNode(nodeID: String!): String
+  deleteEdge(edge: Edge!): ResponseEdge
 }
 
 input UserNode {
@@ -33,9 +44,4 @@ input UserNode {
   level: String!
   progress: Float = 0
   uploadDate: DateTime
-}
-
-input Edge {
-  from: String!
-  to: String!
 }

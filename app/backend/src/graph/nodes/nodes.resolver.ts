@@ -32,4 +32,11 @@ export class NodesResolver {
   async deleteNode(@Args('nodeID') nodeID: string): Promise<string | Error> {
     return this.service.deleteNode(nodeID);
   }
+
+  @Mutation(() => Edge, {
+    nullable: true,
+  })
+  async deleteEdge(@Args('edge') edge: Edge): Promise<Edge | Error> {
+    return this.service.deleteEdge(edge);
+  }
 }

@@ -52,4 +52,19 @@ export class NodesService {
       return new Error(`${nodeID} does not appear to exist in the database`);
     }
   }
+
+  async deleteEdge(edge: Edge) {
+    try {
+      await this.query.raw(`
+      MATCH (:Card {id: "${edge.from}"}) -[connection]-> (:Card {id: "${edge.to}"}) 
+      DELETE connection
+      `);
+      return edge;
+    } catch (err) {
+      console.error(err);
+      return new Error(
+        `We could not delete the edge between ${edge.from} ${edge.to}`,
+      );
+    }
+  }
 }
