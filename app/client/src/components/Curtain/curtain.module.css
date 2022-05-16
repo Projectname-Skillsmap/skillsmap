@@ -1,0 +1,20 @@
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100vh;
+  background-color: rgb(33, 33, 33);
+  z-index: 9999;
+  transform: translateX(-100vw);
+}
+
+.in {
+  transform: translateX(0);
+  width: 150vw;
+}
+
+.out {
+  transform: translateX(100vw);
+  width: 0;
+}
