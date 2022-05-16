@@ -1,10 +1,15 @@
-import { Field, InputType } from '@nestjs/graphql';
+import { Field, InputType, ObjectType } from '@nestjs/graphql';
 
-@InputType()
+@InputType('Edge')
+@ObjectType('ResponseEdge')
 export class Edge {
-  @Field(() => String)
+  @Field(() => String, {
+    nullable: true,
+  })
   from: string;
 
-  @Field(() => String)
+  @Field(() => String, {
+    nullable: true,
+  })
   to: string;
 }

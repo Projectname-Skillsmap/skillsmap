@@ -27,7 +27,7 @@ export const useCreateConnection = () => {
       recordChange({
         id: newEdge.id,
         type: "ADD",
-        entity: "edge",
+        entity: "EDGE",
       })
     );
   };

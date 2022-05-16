@@ -13,7 +13,7 @@ export const useCreateNode = () => {
     const card = createCardFrom(input);
     dispatch(
       recordChange({
-        entity: "node",
+        entity: "NODE",
         id: card.id,
         type: "ADD",
       })

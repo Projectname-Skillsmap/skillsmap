@@ -6,7 +6,6 @@ import {
 } from "react-flow-renderer";
 import type { CardPayload } from "@utils/card-helpers";
 import { useAppDispatch, useAppSelector } from "@redux/redux-hooks";
-import useAnimate from "@hooks/animation/useAnimate";
 import card__style from "./card.module.css";
 import { Button } from "@mui/material";
 import { openModal } from "@redux/widget/modals/modals";
@@ -14,7 +13,6 @@ import Handlers from "./Handler/Handler";
 import { RiDragMove2Line } from "react-icons/ri";
 import { MdDelete } from "react-icons/md";
 import { deleteHandlers } from "./card-slice";
-// import { delta } from "@utils/changes/delta";
 import { recordChange } from "@changes/changes";
 
 const CustomCard: FC<{
@@ -40,7 +38,7 @@ const CustomCard: FC<{
               console.log({ changes });
               dispatch(
                 recordChange({
-                  entity: "node",
+                  entity: "NODE",
                   type: "DELETE",
                   id,
                 })
@@ -107,7 +105,7 @@ const CustomCard: FC<{
               deletedEdges.map((edge) =>
                 dispatch(
                   recordChange({
-                    entity: "edge",
+                    entity: "EDGE",
                     id: edge.id,
                     type: "DELETE",
                   })

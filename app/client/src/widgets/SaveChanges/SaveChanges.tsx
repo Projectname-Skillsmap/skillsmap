@@ -1,11 +1,11 @@
 import save_changes__style from "./save-changes.module.css";
 import { HiOutlineExclamation } from "react-icons/hi";
 import { closeModal } from "@redux/widget/modals/modals";
-import useUploadMap from "@hooks/map/useUploadMap";
+import useUpload from "@hooks/map/upload/useUpload";
 import useAnimate from "@hooks/animation/useAnimate";
 import { FC } from "react";
 const SaveChanges: FC<{ id: string }> = ({ id }) => {
-  const uploadMap = useUploadMap();
+  const upload = useUpload();
   const animateOut = useAnimate(id);
   return (
     <div className={save_changes__style.container}>
@@ -24,8 +24,8 @@ const SaveChanges: FC<{ id: string }> = ({ id }) => {
             <button
               onClick={() => {
                 closeModal("save-changes");
-                uploadMap();
                 animateOut();
+                upload();
               }}
               className={save_changes__style.button}>
               DA

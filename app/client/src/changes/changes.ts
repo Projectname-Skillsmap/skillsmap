@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface Change {
-  type: "ADD" | "DELETE" | "MODIFY";
-  entity: "node" | "edge";
+  type: "ADD" | "DELETE";
+  entity: "NODE" | "EDGE";
   id: string;
 }
 
@@ -25,12 +25,11 @@ const ChangeSlice = createSlice({
       ];
     },
 
-    deleteChangeHistory() {
-      console.log("RETURN EMPTY");
+    deleteChangesHistory() {
       return [];
     },
   },
 });
 
 export default ChangeSlice.reducer;
-export const { recordChange, deleteChangeHistory } = ChangeSlice.actions;
+export const { recordChange, deleteChangesHistory } = ChangeSlice.actions;

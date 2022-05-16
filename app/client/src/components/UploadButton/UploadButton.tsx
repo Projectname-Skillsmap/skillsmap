@@ -1,9 +1,9 @@
 import { Fab } from "@mui/material";
 import { AiOutlineUpload } from "react-icons/ai";
-import useUploadMap from "@hooks/map/useUploadMap";
+import useUpload from "@hooks/map/upload/useUpload";
 
 const UploadButton = () => {
-  const uploadMap = useUploadMap();
+  const upload = useUpload();
   return (
     <Fab
       aria-label='add'
@@ -18,7 +18,7 @@ const UploadButton = () => {
           backgroundColor: "rgb(35, 36, 43)",
         },
       }}
-      onClick={uploadMap}>
+      onClick={upload}>
       <AiOutlineUpload />
     </Fab>
   );
