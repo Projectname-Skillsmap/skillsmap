@@ -24,6 +24,7 @@ const Handlers: FC<{ id: string }> = ({ id }) => {
 
   return (
     <>
+      {/* @ts-ignore */}
       <Handle
         style={{
           position: "absolute",
@@ -68,6 +69,7 @@ const Handlers: FC<{ id: string }> = ({ id }) => {
       />
 
       {(handlers[id] || []).map(({ handleX, handleY, targetID, type }) => (
+        // @ts-ignore
         <Handle
           style={{
             left: handleX,
