@@ -1,6 +1,10 @@
-// import type { NextPage } from "next";
-// import dynamic from "next/dynamic";
+import Link from "next/link";
 
-// import { ReactFlowProvider } from "react-flow-renderer";
-
-// export default Home;
+const Index = () => {
+  return (
+    <Link href={"/map/web"}>
+      <a>GO TO MAP</a>
+    </Link>
+  );
+};
+export default Index;
