@@ -1,4 +1,4 @@
-import React, { FC, MouseEvent } from "react";
+import React, { FC } from "react";
 import {
   EdgeProps,
   useReactFlow,
@@ -69,7 +69,7 @@ const CustomEdge: FC<EdgeProps> = ({
                 recordChange({
                   id,
                   type: "DELETE",
-                  entity: "edge",
+                  entity: "EDGE",
                 })
               );
 
