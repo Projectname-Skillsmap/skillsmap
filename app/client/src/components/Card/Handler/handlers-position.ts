@@ -5,8 +5,20 @@ interface HandlerPosition {
   y: number;
 }
 
-export const sourceHandlerPosition$ = new ReplaySubject<HandlerPosition>(1);
-export const targetHandlerPosition$ = new Subject<HandlerPosition>();
+const sourceHandlerPosition$ = new ReplaySubject<HandlerPosition>(1);
+const targetHandlerPosition$ = new Subject<HandlerPosition>();
+
+export const updateSourceHandlerPosition = (
+  newHandlerPosition: HandlerPosition
+) => {
+  sourceHandlerPosition$.next(newHandlerPosition);
+};
+
+export const updateTargetHandlerPosition = (
+  newHandlerPosition: HandlerPosition
+) => {
+  targetHandlerPosition$.next(newHandlerPosition);
+};
 
 export const handlersPosition = targetHandlerPosition$.pipe(
   withLatestFrom(sourceHandlerPosition$),
