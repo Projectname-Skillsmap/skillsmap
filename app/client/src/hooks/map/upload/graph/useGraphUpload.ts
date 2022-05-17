@@ -2,6 +2,7 @@ import { deleteChangesHistory } from "@changes/changes";
 import useChanges from "@hooks/changes/useChanges";
 import { useAppDispatch } from "@redux/redux-hooks";
 import useAddEdge from "../edge/add";
+import useDeleteEdge from "../edge/delete";
 import useAddNode from "../node/add";
 import useDeleteNode from "../node/delete";
 
@@ -13,6 +14,7 @@ const useGraphUpload = () => {
   const addNode = useAddNode();
   const addEdge = useAddEdge();
   const deleteNode = useDeleteNode();
+  const deleteEdge = useDeleteEdge();
 
   return async () => {
     for await (const change of changes) {
@@ -26,6 +28,11 @@ const useGraphUpload = () => {
 
       if (change.entity === "NODE" && change.type === "DELETE") {
         deleteNode(change.id);
+      }
+
+      if (change.entity === "EDGE" && change.type === "DELETE") {
+        console.log("should delete ...");
+        deleteEdge(change.id);
       }
     }
     dispatch(deleteChangesHistory());
