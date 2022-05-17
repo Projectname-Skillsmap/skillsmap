@@ -36,7 +36,7 @@ export class NodesService {
   async createEdge(edge: Edge) {
     const { from, to } = edge;
     this.query.raw(
-      `MATCH (from: Card), (to: Card) WHERE from.id = "${from}" AND to.id = "${to}" CREATE (from) -[r:DIRECT_CONNECTION]-> (to)`,
+      `MATCH (from: Card), (to: Card) WHERE from.id = "${from}" AND to.id = "${to}" CREATE (from) -[connection:DIRECT_CONNECTION]-> (to)`,
     );
     return [from, to] as [string, string];
   }
@@ -56,7 +56,7 @@ export class NodesService {
   async deleteEdge(edge: Edge) {
     try {
       await this.query.raw(`
-      MATCH (:Card {id: "${edge.from}"}) -[connection]-> (:Card {id: "${edge.to}"}) 
+      MATCH (:Card {id: "${edge.from}"}) -[connection]-> (:Card {id: "${edge.to}"})
       DELETE connection
       `);
       return edge;
