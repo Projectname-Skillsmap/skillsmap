@@ -7,7 +7,14 @@ import customizeCard from "@widgets/CustomizeCard/customize-card.slice";
 import newCard from "@components/Toolbar/Buttons/Add-Card/add-card.slice";
 
 export const store = configureStore({
-  reducer: { card, changes, curtain, saveChanges, customizeCard, newCard },
+  reducer: {
+    card,
+    changes,
+    curtain,
+    saveChanges,
+    customizeCard,
+    newCard,
+  },
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

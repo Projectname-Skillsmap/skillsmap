@@ -1,6 +1,6 @@
 import { useReactFlow } from "react-flow-renderer";
 import { useRouter } from "next/router";
-import { CardPayload } from "@utils/card-helpers";
+import { CardPayload } from "@utils/card";
 import { useAppSelector } from "@redux/redux-hooks";
 
 const useMapUpload = () => {

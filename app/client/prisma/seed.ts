@@ -1,6 +1,6 @@
 import { prisma } from "./prisma";
 import { Edge, Node } from "react-flow-renderer";
-import type { CardPayload } from "../src/utils/card-helpers";
+import type { CardPayload } from "@utils/card";
 
 export default async function seed() {
   await prisma.graph.deleteMany({});

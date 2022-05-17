@@ -4,7 +4,7 @@ import {
   NodeHandleBounds,
   useReactFlow,
 } from "react-flow-renderer";
-import type { CardPayload } from "@utils/card-helpers";
+import type { CardPayload } from "@utils/card";
 import { useAppDispatch, useAppSelector } from "@redux/redux-hooks";
 import card__style from "./card.module.css";
 import { Button } from "@mui/material";

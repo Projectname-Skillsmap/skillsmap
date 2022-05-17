@@ -1,7 +1,7 @@
 import { recordChange } from "@changes/changes";
 import { createNodeFrom } from "@components/Toolbar/Buttons/Add-Card/add-card.slice";
 import { useAppDispatch, useAppSelector } from "@redux/redux-hooks";
-import { CardPayload, createCardFrom } from "@utils/card-helpers";
+import { CardPayload, createCardFrom } from "@utils/card";
 
 export const useNewNode = () => {
   return useAppSelector(({ newCard }) => newCard);

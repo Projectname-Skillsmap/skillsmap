@@ -4,12 +4,9 @@ import {
   useUpdateNodeInternals,
 } from "react-flow-renderer";
 import { useAppDispatch } from "@redux/redux-hooks";
-import { CardPayload } from "../../../../utils/card-helpers";
-import { updateHandlers } from "../../../../components/Card/card-slice";
-import {
-  getCardMetrics,
-  snapEdge,
-} from "../../../../components/Card/Handler/snap-edge";
+import { CardPayload } from "@utils/card";
+import { updateHandlers } from "@components/Card/card-slice";
+import { getCardMetrics, snapEdge } from "@components/Card/Handler/snap-edge";
 
 export const useUpdateHandlers = () => {
   const ReactFlowInstance = useReactFlow();
