@@ -12,7 +12,7 @@ export const useCreateConnection = () => {
     targetID: string
   ) => {
     const newEdge = {
-      id: `skillsmap_edge__${sourceID}_${targetID}`,
+      id: `${source}-${target}`,
       sourceHandle: sourceID,
       targetHandle: targetID,
       source,
