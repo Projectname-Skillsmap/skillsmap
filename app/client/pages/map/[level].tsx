@@ -5,7 +5,7 @@ import { Edge, Node } from "react-flow-renderer";
 import { prisma } from "prisma/prisma";
 import Toolbar from "@components/Toolbar/Toolbar";
 import styles from "@styles/Home.module.css";
-const Tree = dynamic(() => import("@components/Tree/Tree"), {
+const MAP = dynamic(() => import("@components/Map/Map"), {
   ssr: false,
 });
 
@@ -27,7 +27,7 @@ const Maps: FC<{ edges: Edge[]; nodes: Node[]; handlers: HandlerStack }> = ({
   return (
     <div className={styles.container}>
       <Toolbar></Toolbar>
-      <Tree initialEdges={edges} initialNodes={nodes}></Tree>
+      <MAP initialEdges={edges} initialNodes={nodes} />
       <Widgets />
       <UploadButton />
     </div>
