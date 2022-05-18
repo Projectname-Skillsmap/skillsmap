@@ -4,15 +4,15 @@ import {
   NodeHandleBounds,
   useReactFlow,
 } from 'react-flow-renderer';
-import type { CardPayload } from '@utils/card';
-import { useAppDispatch, useAppSelector } from '@redux/redux-hooks';
+import type { CardPayload } from 'src/utils/card';
+import { useAppDispatch, useAppSelector } from 'src/redux/redux-hooks';
 import card__style from './card.module.css';
 import { Button } from '@mui/material';
 import Handlers from './Handler/Handler';
 import { RiDragMove2Line } from 'react-icons/ri';
 import { MdDelete } from 'react-icons/md';
 import { deleteHandlers } from './card-slice';
-import { recordChange } from '@changes/changes';
+import { recordChange } from 'src/changes/changes';
 
 const CustomCard: FC<{
   data: CardPayload;

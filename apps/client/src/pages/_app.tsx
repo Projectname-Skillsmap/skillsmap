@@ -1,10 +1,10 @@
-import '../../styles/globals.css';
+import 'src/styles/globals.css';
 import type { AppProps } from 'next/app';
-import { store } from '@redux/store';
+import { store } from 'src/redux/store';
 import { Provider } from 'react-redux';
 import { ReactFlowProvider } from 'react-flow-renderer';
-import Curtain from '@src/components/Curtain/Curtain';
-import Apollo from '@src/graphql/apollo-client';
+import Curtain from 'src/components/Curtain/Curtain';
+import Apollo from 'src/graphql/apollo-client';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

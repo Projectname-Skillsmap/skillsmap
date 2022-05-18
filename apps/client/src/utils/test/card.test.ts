@@ -1,6 +1,6 @@
-import { createCardFrom, IDFrom } from "@utils/card";
+import { createCardFrom, IDFrom } from 'src/utils/card';
 
-it("should create and ID from a title", () => {
-  const id = IDFrom("Web Development");
-  expect(id).toBe("web-development");
+it('should create and ID from a title', () => {
+  const id = IDFrom('Web Development');
+  expect(id).toBe('web-development');
 });

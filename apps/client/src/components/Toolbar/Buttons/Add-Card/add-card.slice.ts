@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { CardPayload } from '@utils/card';
+import { CardPayload } from 'src/utils/card';
 import { Node } from 'react-flow-renderer';
 const addCardSlice = createSlice({
   initialState: {} as Node<CardPayload>,

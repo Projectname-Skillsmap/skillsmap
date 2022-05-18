@@ -1,5 +1,5 @@
 interface Animation {
-  animate: Function;
+  animate: (...args: any[]) => unknown;
   duration: number;
 }
 

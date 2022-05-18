@@ -1,18 +1,18 @@
 import { NextPageContext } from 'next';
 import dynamic from 'next/dynamic';
 import React, { FC, useEffect } from 'react';
-import { Edge, Node } from '../react-flow-renderer-v12/dist/esm';
-import { prisma } from '@src/prisma/prisma';
-import Toolbar from '@components/Toolbar/Toolbar';
-import styles from '@styles/Home.module.css';
-const MAP = dynamic(() => import('@components/Map/Map'), {
+import { Edge, Node } from 'react-flow-renderer';
+import { prisma } from 'src/prisma/prisma';
+import Toolbar from 'src/components/Toolbar/Toolbar';
+import styles from 'src/styles/Home.module.css';
+const MAP = dynamic(() => import('src/components/Map/Map'), {
   ssr: false,
 });
 
-import { useAppDispatch } from '@redux/redux-hooks';
-import { HandlerStack, rebuildHandlers } from '@components/Card/card-slice';
-import Widgets from '@widgets/Widgets';
-import UploadButton from '@components/UploadButton/UploadButton';
+import { useAppDispatch } from 'src/redux/redux-hooks';
+import { HandlerStack, rebuildHandlers } from 'src/components/Card/card-slice';
+import Widgets from 'src/widgets/Widgets';
+import UploadButton from 'src/components/UploadButton/UploadButton';
 
 const Maps: FC<{ edges: Edge[]; nodes: Node[]; handlers: HandlerStack }> = ({
   nodes,

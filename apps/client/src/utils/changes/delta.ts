@@ -1,4 +1,4 @@
-import { Change } from "@changes/changes";
+import { Change } from 'src/changes/changes';
 
 const value = {
   DELETE: -1,

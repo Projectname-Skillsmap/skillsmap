@@ -1,14 +1,14 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface Change {
-  type: "ADD" | "DELETE";
-  entity: "NODE" | "EDGE";
+  type: 'ADD' | 'DELETE';
+  entity: 'NODE' | 'EDGE';
   id: string;
 }
 
 const ChangeSlice = createSlice({
   initialState: [] as Change[],
-  name: "Change",
+  name: 'Change',
   reducers: {
     recordChange(state, action: PayloadAction<Change>) {
       console.log({

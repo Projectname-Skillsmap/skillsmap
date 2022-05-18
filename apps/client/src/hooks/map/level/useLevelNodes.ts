@@ -1,9 +1,6 @@
 import { useEffect } from 'react';
-import {
-  Node,
-  useNodesState,
-} from 'react-flow-renderer';
-import { CardPayload } from '@utils/card';
+import { Node, useNodesState } from 'react-flow-renderer';
+import { CardPayload } from 'src/utils/card';
 
 export const useLevelUpdatedNodesState = (
   initialNodesOnLevel: Node<CardPayload>[]

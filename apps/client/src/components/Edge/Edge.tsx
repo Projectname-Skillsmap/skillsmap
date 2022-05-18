@@ -5,7 +5,7 @@ import {
   getSimpleBezierEdgeCenter,
   getSimpleBezierPath,
 } from 'react-flow-renderer';
-import { useAppDispatch, useAppSelector } from '@redux/redux-hooks';
+import { useAppDispatch } from 'src/redux/redux-hooks';
 import { recordChange } from 'src/changes/changes';
 import { deleteHandlers } from '../Card/card-slice';
 import edge__styles from './edge.module.css';
@@ -38,7 +38,6 @@ const CustomEdge: FC<EdgeProps> = ({
   });
 
   const ReactFlowInstance = useReactFlow();
-  const handlers = useAppSelector(({ card }) => card.handlers);
   const dispatch = useAppDispatch();
   return (
     <>

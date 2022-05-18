@@ -1,11 +1,11 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const saveChangesSlice = createSlice({
-  initialState: { visible: false, levelID: "" },
-  name: "save-changes",
+  initialState: { visible: false, levelID: '' },
+  name: 'save-changes',
   reducers: {
     open(_, action: PayloadAction<string>) {
-      console.log("PASSED");
+      console.log('PASSED');
       return {
         visible: true,
         levelID: action.payload,
@@ -14,7 +14,7 @@ const saveChangesSlice = createSlice({
     close() {
       return {
         visible: false,
-        levelID: "",
+        levelID: '',
       };
     },
   },

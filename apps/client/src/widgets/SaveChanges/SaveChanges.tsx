@@ -1,9 +1,9 @@
-import save_changes__style from "./save-changes.module.css";
-import { HiOutlineExclamation } from "react-icons/hi";
-import { closeModal } from "@redux/widget/modals/modals";
-import useUpload from "@hooks/map/upload/useUpload";
-import useAnimate from "@hooks/animation/useAnimate";
-import { FC } from "react";
+import save_changes__style from './save-changes.module.css';
+import { HiOutlineExclamation } from 'react-icons/hi';
+import { closeModal } from 'src/redux/widget/modals/modals';
+import useUpload from 'src/hooks/map/upload/useUpload';
+import useAnimate from 'src/hooks/animation/useAnimate';
+import { FC } from 'react';
 const SaveChanges: FC<{ id: string }> = ({ id }) => {
   const upload = useUpload();
   const animateOut = useAnimate(id);
@@ -23,19 +23,21 @@ const SaveChanges: FC<{ id: string }> = ({ id }) => {
           <div className={save_changes__style.options}>
             <button
               onClick={() => {
-                closeModal("save-changes");
+                closeModal('save-changes');
                 animateOut();
                 upload();
               }}
-              className={save_changes__style.button}>
+              className={save_changes__style.button}
+            >
               DA
             </button>
             <button
               onClick={() => {
                 animateOut();
-                closeModal("save-changes");
+                closeModal('save-changes');
               }}
-              className={save_changes__style.button}>
+              className={save_changes__style.button}
+            >
               NU
             </button>
           </div>

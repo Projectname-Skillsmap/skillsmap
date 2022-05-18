@@ -3,10 +3,13 @@ import {
   useReactFlow,
   useUpdateNodeInternals,
 } from 'react-flow-renderer';
-import { useAppDispatch } from '@redux/redux-hooks';
-import { CardPayload } from '@utils/card';
-import { updateHandlers } from '@components/Card/card-slice';
-import { getCardMetrics, snapEdge } from '@components/Card/Handler/snap-edge';
+import { useAppDispatch } from 'src/redux/redux-hooks';
+import { CardPayload } from 'src/utils/card';
+import { updateHandlers } from 'src/components/Card/card-slice';
+import {
+  getCardMetrics,
+  snapEdge,
+} from 'src/components/Card/Handler/snap-edge';
 
 export const useUpdateHandlers = () => {
   const ReactFlowInstance = useReactFlow();
@@ -48,6 +51,7 @@ export const useUpdateHandlers = () => {
         },
       })
     );
+
     updateNodeInternals(card.id);
 
     return targetID;

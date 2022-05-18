@@ -1,10 +1,10 @@
-import { deleteChangesHistory } from "@changes/changes";
-import useChanges from "@hooks/changes/useChanges";
-import { useAppDispatch } from "@redux/redux-hooks";
-import useAddEdge from "../edge/add";
-import useDeleteEdge from "../edge/delete";
-import useAddNode from "../node/add";
-import useDeleteNode from "../node/delete";
+import { deleteChangesHistory } from 'src/changes/changes';
+import useChanges from 'src/hooks/changes/useChanges';
+import { useAppDispatch } from 'src/redux/redux-hooks';
+import useAddEdge from '../edge/add';
+import useDeleteEdge from '../edge/delete';
+import useAddNode from '../node/add';
+import useDeleteNode from '../node/delete';
 
 const useGraphUpload = () => {
   const dispatch = useAppDispatch();
@@ -18,20 +18,20 @@ const useGraphUpload = () => {
 
   return async () => {
     for await (const change of changes) {
-      if (change.entity === "NODE" && change.type === "ADD") {
+      if (change.entity === 'NODE' && change.type === 'ADD') {
         addNode(change.id);
       }
 
-      if (change.entity === "EDGE" && change.type === "ADD") {
+      if (change.entity === 'EDGE' && change.type === 'ADD') {
         addEdge(change.id);
       }
 
-      if (change.entity === "NODE" && change.type === "DELETE") {
+      if (change.entity === 'NODE' && change.type === 'DELETE') {
         deleteNode(change.id);
       }
 
-      if (change.entity === "EDGE" && change.type === "DELETE") {
-        console.log("should delete ...");
+      if (change.entity === 'EDGE' && change.type === 'DELETE') {
+        console.log('should delete ...');
         deleteEdge(change.id);
       }
     }

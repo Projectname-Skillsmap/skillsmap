@@ -1,10 +1,10 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const customizeCardSlice = createSlice({
   initialState: {
     visible: false,
   },
-  name: "customize-card",
+  name: 'customize-card',
   reducers: {
     open: () => {
       return {

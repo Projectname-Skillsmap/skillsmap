@@ -1,8 +1,8 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 const curtainSlice = createSlice({
-  initialState: "web",
-  name: "curtain",
+  initialState: 'web',
+  name: 'curtain',
   reducers: {
     changeLevel(_, action: PayloadAction<string>) {
       return action.payload;

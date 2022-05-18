@@ -11,15 +11,15 @@ import ReactFlow, {
   EdgeTypes,
 } from 'react-flow-renderer';
 import CustomCard from '../Card/Card';
-import { useAppSelector } from '@redux/redux-hooks';
-import { useLevelUpdatedNodesState } from '@hooks/map/level/useLevelNodes';
-import { useLevelUpdatedEdgesState } from '@hooks/map/level/useLevelEdges';
+import { useAppSelector } from 'src/redux/redux-hooks';
+import { useLevelUpdatedNodesState } from 'src/hooks//map/level/useLevelNodes';
+import { useLevelUpdatedEdgesState } from 'src/hooks//map/level/useLevelEdges';
 import {
   updateSourceHandlerPosition,
   updateTargetHandlerPosition,
-} from '@components/Card/Handler/handlers-position';
+} from 'src/components/Card/Handler/handlers-position';
 import CustomEdge from '../Edge/Edge';
-import { useNewNode } from '@hooks/map/nodes/useCreateNode';
+import { useNewNode } from 'src/hooks/map/nodes/useCreateNode';
 
 const nodeTypes: NodeTypes = {
   Card: CustomCard as unknown as ReactNode,
@@ -57,14 +57,15 @@ const OverviewFlow: FC<{ initialNodes: Node[]; initialEdges: Edge[] }> = ({
       onNodesChange={onNodesChange}
       onEdgesChange={onEdgesChange}
       onConnectStart={(e) => {
-        const x = e.pageX - mapRef!.current!.getBoundingClientRect().x;
-        const y = e.pageX - mapRef!.current!.getBoundingClientRect().y;
+        const x = e.clientX - mapRef!.current!.getBoundingClientRect().x;
+        const y = e.clientY - mapRef!.current!.getBoundingClientRect().y;
+        console.log({ x, y });
         updateSourceHandlerPosition({ x, y });
       }}
       ref={mapRef}
       onConnectEnd={(e) => {
-        const x = e.pageX - mapRef!.current!.getBoundingClientRect().x;
-        const y = e.pageX - mapRef!.current!.getBoundingClientRect().y;
+        const x = e.clientX - mapRef!.current!.getBoundingClientRect().x;
+        const y = e.clientY - mapRef!.current!.getBoundingClientRect().y;
         updateTargetHandlerPosition({ x, y });
       }}
       fitView

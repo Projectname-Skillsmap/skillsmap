@@ -1,11 +1,7 @@
-import {
-  Connection,
-  Edge,
-  useReactFlow,
-} from 'react-flow-renderer';
-import { useAppDispatch } from '@redux/redux-hooks';
-import { createConnection } from '../../../components/Card/card-slice';
-import { recordChange } from '@changes/changes';
+import { Edge } from 'react-flow-renderer';
+import { useAppDispatch } from 'src/redux/redux-hooks';
+import { createConnection } from 'src/components/Card/card-slice';
+import { recordChange } from 'src/changes/changes';
 
 export const useCreateConnection = () => {
   const dispatch = useAppDispatch();

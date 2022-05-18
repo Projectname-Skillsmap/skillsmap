@@ -1,9 +1,9 @@
 import React, { FC, useEffect, useState } from 'react';
 import { Handle } from 'react-flow-renderer';
-import { useAppSelector } from '@redux/redux-hooks';
-import { useCreateConnection } from '@hooks/map/edges/useCreateEdge';
-import { useUpdateHandlers } from '@hooks/map/nodes/handlers/useUpdateHandlers';
-import { editingEdge$ } from '@components/Toolbar/Buttons/Add-Edge/AddEdge';
+import { useAppSelector } from 'src/redux/redux-hooks';
+import { useCreateConnection } from 'src/hooks/map/edges/useCreateEdge';
+import { useUpdateHandlers } from 'src/hooks/map/nodes/handlers/useUpdateHandlers';
+import { editingEdge$ } from 'src/components/Toolbar/Buttons/Add-Edge/AddEdge';
 import { handlersPosition } from './handlers-position';
 
 const Handlers: FC<{ id: string }> = ({ id }) => {
@@ -50,6 +50,7 @@ const Handlers: FC<{ id: string }> = ({ id }) => {
                 sourceHandlerPosition,
                 'source'
               );
+
               const targetID = updateHandlers(
                 target as string,
                 targetHandlerPosition,

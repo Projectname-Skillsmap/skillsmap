@@ -1,8 +1,8 @@
 import { useReactFlow } from 'react-flow-renderer';
-import { startAnimation$ } from '@components/Curtain/Curtain';
+import { startAnimation$ } from 'src/components/Curtain/Curtain';
 import { useRouter } from 'next/router';
 import { useMemo } from 'react';
-import animate from '@src/animations/animate';
+import animate from 'src/animations/animate';
 
 const useAnimate = (id: string | undefined = undefined) => {
   const ReactFlowInstance = useReactFlow();

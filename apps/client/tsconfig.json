@@ -12,6 +12,7 @@
     "isolatedModules": true,
     "incremental": true,
     "types": ["jest", "node", "react/next", "react-dom/next"]
+    // "baseUrl": "."
   },
 
   "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "next-env.d.ts"],
