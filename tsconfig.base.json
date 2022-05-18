@@ -1,0 +1,31 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@skillsmap/utils/*": ["libs/utils/src/*"],
+      "@hooks/*": ["apps/client/src/hooks/*"],
+      "@pages/*": ["apps/client/src/pages/*"],
+      "@utils/*": ["apps/client/src/utils/*"],
+      "@changes/*": ["apps/client/src/changes/*"],
+      "@components/*": ["apps/client/src/components/*"],
+      "@widgets/*": ["apps/client/src/widgets/*"],
+      "@styles/*": ["apps/client/styles/*"],
+      "@redux/*": ["apps/client/src/redux/*"],
+      "@src/*": ["apps/client/src/*"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}
