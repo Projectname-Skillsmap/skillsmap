@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Neo4j } from '../neo4j/neo4j.service';
-import { Response } from '../types';
+import { Response } from '../neo4j/types';
 @Injectable()
 export class QueryService {
   constructor(private neo4j: Neo4j) {}

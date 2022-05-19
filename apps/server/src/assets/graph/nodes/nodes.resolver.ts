@@ -1,6 +1,6 @@
 import { Args, Mutation, Resolver, Query } from '@nestjs/graphql';
 import { NodesService } from './nodes.service';
-import { Edge, Node, UserNode } from './types';
+import { Edge, Node, UserNode } from '@skillsmap/shared/types';
 @Resolver()
 export class NodesResolver {
   constructor(private service: NodesService) {}

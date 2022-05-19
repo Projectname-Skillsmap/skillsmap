@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { QueryService } from '../../query/query.service';
-import { Edge, Node } from './types';
+import { Edge, Node } from '@skillsmap/shared/types';
 
 @Injectable()
 export class NodesService {
