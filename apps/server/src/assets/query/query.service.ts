@@ -6,10 +6,13 @@ export class QueryService {
   constructor(private neo4j: Neo4j) {}
 
   async result<Key extends string, Value>(
-    clause: `${string} RETURN ${Key}`,
-    result: Key
+    clause: `${string} RETURN ${Key}`
   ): Promise<Record<Key, Response<Value>>> {
-    const data = await this.neo4j.query().raw(clause).run()[0][result];
+    const response = (await this.neo4j
+      .query()
+      .raw(clause)
+      .run()) as unknown as Record<Key, Response<Value>>[];
+    const data = response[0];
     return data;
   }
 

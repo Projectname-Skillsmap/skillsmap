@@ -10,8 +10,7 @@ export class NodesService {
     const { nodes } = await this.query.result<'nodes', Node>(
       ` MATCH (nodes: Card)
         WHERE nodes.level = "${level}"
-        RETURN nodes`,
-      'nodes'
+        RETURN nodes`
     );
     return nodes.properties;
   }
@@ -26,10 +25,9 @@ export class NodesService {
                 progress: 0, 
                 title: "${node.title}"
             }) 
-        RETURN nodes`,
-      'nodes'
+        RETURN nodes`
     );
-    console.log(nodes);
+    console.log({ nodes });
     return nodes.properties;
   }
 
