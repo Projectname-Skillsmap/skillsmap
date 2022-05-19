@@ -3,25 +3,13 @@
   "ignorePatterns": ["**/*"],
   "plugins": ["@nrwl/nx"],
   "rules": {
-    "no-restricted-imports": ["error"]
+    "no-restricted-imports": 0
   },
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
       "rules": {
-        "@nrwl/nx/enforce-module-boundaries": [
-          "error",
-          {
-            "enforceBuildableLibDependency": true,
-            "allow": [],
-            "depConstraints": [
-              {
-                "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
-              }
-            ]
-          }
-        ]
+        "@nrwl/nx/enforce-module-boundaries": 0
       }
     },
     {
