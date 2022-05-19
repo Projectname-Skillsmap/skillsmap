@@ -1,5 +1,5 @@
 import { gql, useMutation } from '@apollo/client';
-import { Edge } from '@skillsmap/utils/lib/types';
+import { Edge } from '@skillsmap/shared/types';
 import { useReactFlow } from 'react-flow-renderer';
 
 const useAddEdge = () => {

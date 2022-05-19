@@ -1,5 +1,5 @@
 import { gql, useMutation } from '@apollo/client';
-import { UserNode } from '@skillsmap/utils/lib/types';
+import { UserNode } from '@skillsmap/shared/types';
 import { useRouter } from 'next/router';
 import { useReactFlow } from 'react-flow-renderer';
 const useAddNode = () => {

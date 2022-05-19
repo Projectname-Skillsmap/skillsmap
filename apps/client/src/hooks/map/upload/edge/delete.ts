@@ -1,9 +1,7 @@
 import { gql, useMutation } from '@apollo/client';
-import { Edge } from '@skillsmap/utils/lib/types';
-import { useReactFlow } from 'react-flow-renderer';
+import { Edge } from '@skillsmap/shared/types';
 
 const useDeleteEdge = () => {
-  const ReactFlowInstance = useReactFlow();
   const [deleteEdge] = useMutation(gql`
     mutation Mutation($edge: Edge!) {
       deleteEdge(edge: $edge) {

@@ -15,8 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@skillsmap/utils/*": ["libs/utils/src/*"],
-      "@src/*": ["apps/client/src/*"],
+      "@skillsmap/shared/*": ["shared/*"],
       "src/*": ["apps/client/src/*"]
     }
   },

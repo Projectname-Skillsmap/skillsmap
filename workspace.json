@@ -5,6 +5,6 @@
     "client": "apps/client",
     "client-e2e": "apps/client-e2e",
     "server": "apps/server",
-    "utils": "libs/utils"
+    "shared": "shared"
   }
 }
