@@ -1,4 +1,4 @@
-import { createCardFrom, IDFrom } from 'src/utils/card';
+import { IDFrom } from 'src/utils/card';
 
 it('should create and ID from a title', () => {
   const id = IDFrom('Web Development');
